@@ -3,6 +3,7 @@ import ActiveFilters from "./_components/ActiveFilters";
 import CourseCard from "./_components/CourseCard";
 import FilterCourse from "./_components/FilterCourse";
 import FilterCourseMobile from "./_components/FilterCourseMobile";
+import SearchCourse from "./_components/SearchCourse";
 import SortCourse from "./_components/SortCourse";
 
 const CoursesPage = async () => {

@@ -4,10 +4,9 @@ import { Course } from "../model/course-model";
 import { Module } from "../model/module.model";
 import { Testimonial } from "../model/testimonial-model";
 import { User } from "../model/user-model";
-import { connectDB } from "../connection";
 
 export async function getCourseList() {
-    await connectDB();
+    // await connectDB();
     const courses = await Course.find({})
         .select([
             "title",
