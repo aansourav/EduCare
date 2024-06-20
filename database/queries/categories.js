@@ -3,7 +3,8 @@ import { connectDB } from "../connection";
 import { Category } from "../model/category-model";
 
 export async function getCategories() {
-    // await connectDB();
+    await connectDB();
     const categories = await Category.find({}).lean();
     return replaceMongoIdInArray(categories);
 }
+// Compare this snippet from database/queries/index.js:
