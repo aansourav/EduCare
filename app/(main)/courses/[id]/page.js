@@ -13,13 +13,13 @@ const SingleCoursePage = async ({ params: { id } }) => {
                 subtitle={course?.subtitle}
                 thumbnail={course?.thumbnail}
             />
-            <CourseDetails />
+            <CourseDetails course={course} />
             {course?.testimonials && (
                 <Testimonials
                     testimonials={replaceMongoIdInArray(course?.testimonials)}
                 />
             )}
-            <RelatedCourses course={course} />
+            <RelatedCourses />
         </>
     );
 };

@@ -23,6 +23,10 @@ const nextConfig = {
                 protocol: "https",
                 hostname: "t4.ftcdn.net",
             },
+            {
+                protocol: "https",
+                hostname: "avatars.githubusercontent.com",
+            },
         ],
     },
 };

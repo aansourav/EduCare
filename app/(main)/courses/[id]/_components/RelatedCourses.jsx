@@ -49,7 +49,7 @@ const RelatedCourses = () => {
                                                 {course.title}
                                             </div>
                                             <p className="text-xs text-muted-foreground">
-                                                {course.category}
+                                                {course.category?.title}
                                             </p>
                                             <div className="my-3 flex items-center gap-x-2 text-sm md:text-xs">
                                                 <div className="flex items-center gap-x-1 text-slate-500">
