@@ -85,7 +85,6 @@ export async function getCoursesByInstructor(instructorId) {
     );
 
     const totalEnrollments = enrollments.length;
-    console.log("totalEnrollments", totalEnrollments);
     //     enrollments.reduce((item, currentValue) => {
     //     console.log("totalEnrollments", item.length + currentValue.length);
     //     return item.length + currentValue.length;
