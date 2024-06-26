@@ -23,14 +23,14 @@ const CourseDetails = ({ course }) => {
                     <div className="flex items-center gap-2">
                         <Image
                             className="w-[40px] h-[40px] rounded-full"
-                            src={course?.instructor?.profile_picture}
-                            alt={course?.instructor?.profile_picture}
+                            src={course?.instructor?.profilePicture}
+                            alt={course?.instructor?.profilePicture}
                             width={40}
                             height={40}
                         />
                         <p className="font-bold">
-                            {course?.instructor?.first_name}{" "}
-                            {course?.instructor?.last_name}
+                            {course?.instructor?.firstName}{" "}
+                            {course?.instructor?.lastName}
                         </p>
                     </div>
                     <div className="flex items-center gap-2 text-sm">

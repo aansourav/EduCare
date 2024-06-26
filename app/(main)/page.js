@@ -5,9 +5,9 @@ import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import CourseCard from "./courses/_components/CourseCard";
-import { getCourseList } from "@/database/queries/courses";
 import { getCategories } from "@/database/queries/categories";
+import { getCourseList } from "@/database/queries/courses";
+import CourseCard from "./courses/_components/CourseCard";
 
 const HomePage = async () => {
     const courses = await getCourseList();
@@ -47,7 +47,7 @@ const HomePage = async () => {
                             Explore Now
                         </Link>
                         <Link
-                            href=""
+                            href="/register/instructor"
                             className={cn(
                                 buttonVariants({
                                     variant: "outline",

@@ -15,7 +15,7 @@ const CourseInstructor = async ({ instructor }) => {
             <div className="md:flex md:gap-x-5 mb-8">
                 <div className="h-[310px] w-[270px] max-w-full  flex-none rounded mb-5 md:mb-0">
                     <Image
-                        src={instructor?.profile_picture}
+                        src={instructor?.profilePicture}
                         alt=""
                         className="w-full h-full object-cover rounded"
                         width={270}
@@ -25,7 +25,7 @@ const CourseInstructor = async ({ instructor }) => {
                 <div className="flex-1">
                     <div className="max-w-[300px]">
                         <h4 className="text-[34px] font-bold leading-[51px]">
-                            {instructor?.first_name} {instructor?.last_name}
+                            {instructor?.firstName} {instructor?.lastName}
                         </h4>
                         <div className="text-gray-600 font-medium mb-6">
                             {instructor?.role}

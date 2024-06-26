@@ -36,7 +36,7 @@ const Testimonials = async ({ testimonials }) => {
                                                     alt=""
                                                     src={
                                                         testimonial?.user
-                                                            ?.profile_picture
+                                                            ?.profilePicture
                                                     }
                                                     width="56"
                                                     height="56"
@@ -46,11 +46,11 @@ const Testimonials = async ({ testimonials }) => {
                                                     <p className="mt-0.5 text-lg font-medium text-gray-900">
                                                         {
                                                             testimonial?.user
-                                                                ?.first_name
+                                                                ?.firstName
                                                         }{" "}
                                                         {
                                                             testimonial?.user
-                                                                ?.last_name
+                                                                ?.lastName
                                                         }
                                                     </p>
                                                     <div className="flex justify-center gap-0.5 text-yellow-600">
