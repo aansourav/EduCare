@@ -27,7 +27,6 @@ export function MainNav({ items, children }) {
         <>
             <div className="flex gap-6 lg:gap-10">
                 <Link href="/">
-                    {/* <Image className="max-w-[100px]" src={lwsLogo} alt="Logo" /> */}
                     <Logo />
                 </Link>
                 {items?.length ? (
@@ -86,37 +85,51 @@ export function MainNav({ items, children }) {
                         </DropdownMenu>
                     </div>
                 )}
-                <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                        <div className="cursor-pointer">
-                            <Avatar>
-                                <AvatarImage
-                                    src="https://github.com/shadcn.png"
-                                    alt="@shadcn"
-                                />
-                                <AvatarFallback>CN</AvatarFallback>
-                            </Avatar>
-                        </div>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end" className="w-56 mt-4">
-                        <DropdownMenuItem className="cursor-pointer" asChild>
-                            <Link href="account">Profile</Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem className="cursor-pointer" asChild>
-                            <Link href="account/enrolled-courses">
-                                My Courses
-                            </Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem className="cursor-pointer" asChild>
-                            <Link href="">Testimonials & Certificates</Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem className="cursor-pointer" asChild>
-                            <Link href="#" onClick={() => signOut()}>
-                                Logout
-                            </Link>
-                        </DropdownMenuItem>
-                    </DropdownMenuContent>
-                </DropdownMenu>
+                {loginSession && (
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <div className="cursor-pointer">
+                                <Avatar>
+                                    <AvatarImage
+                                        src="https://github.com/shadcn.png"
+                                        alt="@shadcn"
+                                    />
+                                    <AvatarFallback>CN</AvatarFallback>
+                                </Avatar>
+                            </div>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end" className="w-56 mt-4">
+                            <DropdownMenuItem
+                                className="cursor-pointer"
+                                asChild
+                            >
+                                <Link href="account">Profile</Link>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
+                                className="cursor-pointer"
+                                asChild
+                            >
+                                <Link href="account/enrolled-courses">
+                                    My Courses
+                                </Link>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
+                                className="cursor-pointer"
+                                asChild
+                            >
+                                <Link href="">Testimonials & Certificates</Link>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
+                                className="cursor-pointer"
+                                asChild
+                            >
+                                <Link href="#" onClick={() => signOut()}>
+                                    Logout
+                                </Link>
+                            </DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
+                )}
                 <button
                     className="flex items-center space-x-2 lg:hidden"
                     onClick={() => setShowMobileMenu(!showMobileMenu)}

@@ -1,5 +1,5 @@
 "use client";
-import { ceredntialLogin } from "@/app/actions";
+import { credentialLogin } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import {
     Card,
@@ -23,18 +23,22 @@ export function LoginForm() {
 
         try {
             const formData = new FormData(event.currentTarget);
-            const response = await ceredntialLogin(formData);
+            const response = await credentialLogin(formData);
 
-            if (!!response.error) {
+            console.log("Response:", response); // Log the response for debugging
+
+            if (response.error) {
                 console.error(response.error);
                 setError(response.error);
             } else {
                 router.push("/courses");
             }
         } catch (e) {
+            console.error(e); // Log the error for debugging
             setError(e.message);
         }
     };
+
     return (
         <Card className="mx-auto max-w-sm w-full">
             <CardHeader>

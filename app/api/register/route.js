@@ -11,9 +11,13 @@ export const POST = async (request) => {
     console.log(firstName, lastName, email, password, userRole);
 
     await connectDB();
-
+    const existingUser = await User.findOne({ email: email });
+    if (existingUser) {
+        return new NextResponse("User already exists", {
+            status: 409,
+        });
+    }
     const hashedPassword = await bcrypt.hash(password, 5);
-
     const newUser = {
         firstName,
         lastName,
@@ -21,8 +25,6 @@ export const POST = async (request) => {
         password: hashedPassword,
         role: userRole,
     };
-
-    console.log(newUser);
 
     try {
         await User.create(newUser);

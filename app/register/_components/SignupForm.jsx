@@ -40,8 +40,8 @@ export function SignupForm({ role }) {
             });
             if (response.status == 201) {
                 router.push("/login");
-            } else {
-                setError(response.message);
+            } else if (response.status == 409) {
+                setError("User already exists");
             }
         } catch (error) {
             console.log(error.message);
@@ -54,7 +54,11 @@ export function SignupForm({ role }) {
                 <CardDescription>
                     Enter your information to create an account
                 </CardDescription>
-                {error && <p className="text-red-500 space-y-2">{error}</p>}
+                {error && (
+                    <p className="text-red-500 font-bold text-sm space-y-2">
+                        {error}!
+                    </p>
+                )}
             </CardHeader>
             <CardContent>
                 <form onSubmit={handleSubmit}>
